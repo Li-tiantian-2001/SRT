@@ -1,6 +1,6 @@
-# 科技脉冲字幕工具
+# 多格式音视频转字幕工具
 
-本地语音转字幕工具，支持中文、粤语、英语识别，基于 [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) 实现。
+本地语音、视频文件转字幕工具，支持中文、粤语、英语识别，基于 [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) 实现。
 
 ## ✨ 功能特点
 
