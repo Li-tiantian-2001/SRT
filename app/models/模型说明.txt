@@ -1,0 +1,4 @@
+当前使用sherpa-onnx-paraformer-trilingual-zh-cantonese-en模型，支持中、粤、英三语
+如果想换模型可以打开下载：https://github.com/jgraph/drawio-desktop/releases/tag/v29.3.0#samanthaConversationId=35515233546330882
+
+2026年1月11日

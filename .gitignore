@@ -1,0 +1,31 @@
+# Python 虚拟环境
+venv/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# 模型文件（太大，用户自行下载）
+app/models/*.onnx
+app/models/*.bin
+
+# 输出和缓存目录
+app/SRT_OUT/
+app/CACHE/
+app/logs/*.log
+
+# 测试生成的字幕
+test/*.srt
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 开发笔记（不公开）
+z-codex提示词和修改步骤/

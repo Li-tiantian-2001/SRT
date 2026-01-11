@@ -1,0 +1,32 @@
+{
+  "default_model_dir": "./models",
+  "default_output_dir": "./SRT_OUT",
+  "default_input_dir": "",
+  "media_extensions": [".mp4", ".mov", ".m4a", ".mp3", ".wav"],
+  "required_model_files": ["tokens.txt", "model.onnx", "silero_vad.onnx"],
+  "required_ffmpeg_files": ["ffmpeg.exe", "ffprobe.exe"],
+  "script_rel_path": "./vendor/sherpa-onnx/python-api-examples/generate-subtitles.py",
+  "script_args_template": [
+    "--tokens",
+    "{model_dir}/tokens.txt",
+    "--paraformer",
+    "{model_dir}/model.onnx",
+    "--silero-vad-model",
+    "{model_dir}/silero_vad.onnx",
+    "--num-threads",
+    "4",
+    "{input_media}"
+  ],
+  "download_sources": {
+    "github": {
+      "tokens": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-paraformer-trilingual-zh-cantonese-en.tar.bz2",
+      "paraformer": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-paraformer-trilingual-zh-cantonese-en.tar.bz2",
+      "silero_vad": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/silero_vad.onnx"
+    },
+    "hf_mirror": {
+      "tokens": "",
+      "paraformer": "",
+      "silero_vad": ""
+    }
+  }
+}
