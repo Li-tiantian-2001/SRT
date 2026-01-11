@@ -1,0 +1,66 @@
+# 科技脉冲字幕工具
+
+本地语音转字幕工具，支持中文、粤语、英语识别，基于 [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) 实现。
+
+## ✨ 功能特点
+
+- 🎯 支持中文、粤语、英语三语识别
+- 📁 支持单文件和批量处理
+- 🔒 完全本地运行，无需联网
+- 🎨 简洁的图形界面
+
+## 📦 快速开始
+
+### 1. 首次配置
+
+确保已安装 **Python 3.10+**，然后双击运行：
+
+```
+首次使用请双击配置.bat
+```
+
+该脚本会自动创建虚拟环境并安装依赖。
+
+### 2. 下载模型
+
+首次使用需下载 ASR 模型文件，放入 `app/models/` 目录：
+
+| 文件 | 说明 |
+|------|------|
+| `model.onnx` | Paraformer 模型 |
+| `tokens.txt` | 词表文件 |
+| `silero_vad.onnx` | VAD 模型 |
+
+**下载地址：**
+- [sherpa-onnx-paraformer-trilingual-zh-cantonese-en](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-paraformer-trilingual-zh-cantonese-en.tar.bz2)
+- [silero_vad.onnx](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/silero_vad.onnx)
+
+### 3. 启动程序
+
+```
+脉冲字幕启动.bat
+```
+
+## 📂 目录结构
+
+```
+├── app/
+│   ├── launcher/        # 主程序
+│   ├── models/          # 模型文件（需自行下载）
+│   ├── tools/ffmpeg/    # ffmpeg 工具
+│   └── samples/         # 测试音频
+├── docs/                # 文档
+├── 首次使用请双击配置.bat  # 环境配置脚本
+└── 脉冲字幕启动.bat        # 启动脚本
+```
+
+## 🔗 相关链接
+
+- [科技脉冲 YouTube](https://www.youtube.com/@kejimaichong)
+- [B站主页](https://space.bilibili.com/3690993412999524)
+- [Telegram 频道](https://t.me/kejimaichong)
+- QQ群：787661896
+
+## 📄 License
+
+MIT License
