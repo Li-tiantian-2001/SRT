@@ -1,0 +1,28 @@
+[运行] C:/Users/li145/Videos/32079020843-1-192.mp4
+[命令] C:\Users\li145\AppData\Local\Programs\Python\Python310\python.exe d:\Code\CodexSRT\app\./vendor/sherpa-onnx/python-api-examples/generate-subtitles.py --tokens d:\Code\CodexSRT\app\models/tokens.txt --paraformer d:\Code\CodexSRT\app\models/model.onnx --silero-vad-model d:\Code\CodexSRT\app\models/silero_vad.onnx --num-threads 4 --decoding-method greedy_search --output-filename d:\Code\CodexSRT\app\SRT_OUT\32079020843-1-192.srt C:/Users/li145/Videos/32079020843-1-192.mp4
+Traceback (most recent call last):
+  File "d:\Code\CodexSRT\app\vendor\sherpa-onnx\python-api-examples\generate-subtitles.py", line 133, in <module>
+    import sherpa_onnx
+ModuleNotFoundError: No module named 'sherpa_onnx'
+[失败] 生成字幕失败，请检查缺失文件或日志。
+[完成] 全部任务结束。
+
+我刚刚创建了虚拟环境并pip install sherpa-onnx，但是还是上面这样报错，解决问题并把你的答复写在下面
+你的答复：
+我的反馈：
+你的报错原因是“运行程序的 Python”和“你安装 sherpa-onnx 的 Python”不是同一个。
+从日志看，程序用的是：
+C:\Users\li145\AppData\Local\Programs\Python\Python310\python.exe
+而你是在虚拟环境里安装的，所以这个系统 Python 找不到 sherpa_onnx。
+
+解决方法（任选其一）：
+1) 用虚拟环境的 Python 启动 GUI（推荐）
+   - 打开终端，激活虚拟环境
+   - 运行：`venv\Scripts\python.exe app\launcher\main.py`
+   - 这样 sys.executable 就是虚拟环境的 Python，能找到 sherpa_onnx
+2) 在系统 Python 里也安装一次（简单但不推荐）
+   - 运行：`C:\Users\li145\AppData\Local\Programs\Python\Python310\python.exe -m pip install sherpa-onnx`
+
+确认是否成功的方法：
+- 用同一个 Python 执行：`python -c "import sherpa_onnx;print(sherpa_onnx.__file__)"`
+  如果能打印路径，就说明安装成功。

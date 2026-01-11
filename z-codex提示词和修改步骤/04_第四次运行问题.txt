@@ -1,0 +1,31 @@
+[运行] C:/Users/li145/Videos/32079020843-1-192.mp4
+[命令] D:\Code\CodexSRT\venv\Scripts\python.exe D:\Code\CodexSRT\app\./vendor/sherpa-onnx/python-api-examples/generate-subtitles.py --tokens D:\Code\CodexSRT\app\models/tokens.txt --paraformer D:\Code\CodexSRT\app\models/model.onnx --silero-vad-model D:\Code\CodexSRT\app\models/silero_vad.onnx --num-threads 4 --decoding-method greedy_search --output-filename D:\Code\CodexSRT\app\SRT_OUT\32079020843-1-192.srt C:/Users/li145/Videos/32079020843-1-192.mp4
+usage: generate-subtitles.py [-h] [--silero-vad-model SILERO_VAD_MODEL]
+                             [--ten-vad-model TEN_VAD_MODEL] [--tokens TOKENS]
+                             [--encoder ENCODER] [--decoder DECODER]
+                             [--joiner JOINER] [--model-type MODEL_TYPE]
+                             [--paraformer PARAFORMER]
+                             [--sense-voice SENSE_VOICE]
+                             [--wenet-ctc WENET_CTC]
+                             [--num-threads NUM_THREADS]
+                             [--fire-red-asr-encoder FIRE_RED_ASR_ENCODER]
+                             [--fire-red-asr-decoder FIRE_RED_ASR_DECODER]
+                             [--whisper-encoder WHISPER_ENCODER]
+                             [--whisper-decoder WHISPER_DECODER]
+                             [--whisper-language WHISPER_LANGUAGE]
+                             [--whisper-task {transcribe,translate}]
+                             [--whisper-tail-paddings WHISPER_TAIL_PADDINGS]
+                             [--moonshine-preprocessor MOONSHINE_PREPROCESSOR]
+                             [--moonshine-encoder MOONSHINE_ENCODER]
+                             [--moonshine-uncached-decoder MOONSHINE_UNCACHED_DECODER]
+                             [--moonshine-cached-decoder MOONSHINE_CACHED_DECODER]
+                             [--decoding-method DECODING_METHOD]
+                             [--debug DEBUG] [--sample-rate SAMPLE_RATE]
+                             [--feature-dim FEATURE_DIM]
+                             sound_file
+generate-subtitles.py: error: unrecognized arguments: --output-filename C:/Users/li145/Videos/32079020843-1-192.mp4
+[失败] 生成字幕失败，请检查缺失文件或日志。
+[完成] 全部任务结束
+
+检查问题，并把问题发在下面
+你的答复：你的报错是脚本不支持 --output-filename 参数；我已在代码里移除该参数，并改为脚本先在输入文件同目录生成 .srt，随后自动移动到 app/SRT_OUT。请重新运行。

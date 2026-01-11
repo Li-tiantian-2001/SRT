@@ -1,0 +1,13 @@
+运行venv\Scripts\python.exe app\launcher\main.py之后：
+
+[运行] C:/Users/li145/Videos/32079020843-1-192.mp4
+[命令] D:\Code\CodexSRT\venv\Scripts\python.exe D:\Code\CodexSRT\app\./vendor/sherpa-onnx/python-api-examples/generate-subtitles.py --tokens D:\Code\CodexSRT\app\models/tokens.txt --paraformer D:\Code\CodexSRT\app\models/model.onnx --silero-vad-model D:\Code\CodexSRT\app\models/silero_vad.onnx --num-threads 4 --decoding-method greedy_search --output-filename D:\Code\CodexSRT\app\SRT_OUT\32079020843-1-192.srt C:/Users/li145/Videos/32079020843-1-192.mp4
+Traceback (most recent call last):
+  File "D:\Code\CodexSRT\app\vendor\sherpa-onnx\python-api-examples\generate-subtitles.py", line 132, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+[失败] 生成字幕失败，请检查缺失文件或日志。
+[完成] 全部任务结束。
+
+帮我解决，你在此文件下面一行答复：
+你的答复：你的报错是 venv 里缺少 numpy；请执行：venv\Scripts\python.exe -m pip install numpy，然后再用 venv 运行。

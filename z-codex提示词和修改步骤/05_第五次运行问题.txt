@@ -1,0 +1,14 @@
+[运行] C:/Users/li145/Videos/32079020843-1-192.mp4
+[命令] D:\Code\CodexSRT\venv\Scripts\python.exe D:\Code\CodexSRT\app\./vendor/sherpa-onnx/python-api-examples/generate-subtitles.py --tokens D:\Code\CodexSRT\app\models/tokens.txt --paraformer D:\Code\CodexSRT\app\models/model.onnx --silero-vad-model D:\Code\CodexSRT\app\models/silero_vad.onnx --num-threads 4 --decoding-method greedy_search C:/Users/li145/Videos/32079020843-1-192.mp4
+use silero-vad
+Started!
+Saved to C:\Users\li145\Videos\32079020843-1-192.srt
+Audio duration:	721.771 s
+Elapsed:	36.026 s
+RTF = 36.026/721.771 = 0.050
+Done!
+[完成] 生成 D:\Code\CodexSRT\app\SRT_OUT\32079020843-1-192.srt
+[完成] 全部任务结束。
+
+现在日志没有报错，但是输出文件夹里面是空的，我在里面没有找到任何文件
+你的答复：日志显示 srt 生成在 C:\Users\li145\Videos\32079020843-1-192.srt，但移动到 app/SRT_OUT 可能失败。我已修复为更可靠的移动/复制，并在失败时提示原始位置。请更新代码后再跑一次；如果还空，请确认是否在 C:\Users\li145\Videos\ 找到 srt。

@@ -1,0 +1,16 @@
+Exception in thread Thread-1 (_run_batch):
+Traceback (most recent call last):
+  File "C:\Users\li145\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "C:\Users\li145\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\Code\CodexSRT\app\launcher\main.py", line 326, in _run_batch        
+    self._run_script_for_file(media)
+  File "D:\Code\CodexSRT\app\launcher\main.py", line 265, in _run_script_for_file
+    for line in self.proc.stdout:
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xad in position 71: illegal 
+multibyte sequence
+
+上面是我遇到的报错：但是字幕文件是正常生成的，只不过文件生成完没有生成完成的提示
+
+回答：已定位原因：子进程输出包含非 GBK 字符，导致日志解码崩溃，所以没打印完成提示。我已在 main.py 里改为 UTF-8 解码并 errors=replace，避免线程崩溃。请更新后再运行。

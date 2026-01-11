@@ -1,0 +1,55 @@
+可以，下面是“更高级、适合 16GB 内存 + CPU”的中英模型候选（都来自官方 GitHub）：
+
+推荐 1：SenseVoice（多语种，英文更稳）  
+- 模型包：`sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17`  
+- 下载：  
+`https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2`  
+- 适合：中英混合、口音多、英文准确率更好  
+- 资源：16GB 内存 + CPU 可以跑，速度中等
+
+推荐 2：Paraformer Trilingual（更大、更“厚重”）  
+- 模型包：`sherpa-onnx-paraformer-trilingual-zh-cantonese-en`  
+- 下载：  
+`https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-paraformer-trilingual-zh-cantonese-en.tar.bz2`  
+- 适合：中文更强、英文也不错  
+- 资源：大模型，CPU 会慢一点，但 16GB 内存能承受
+
+你告诉我选哪个，我就帮你把配置改成对应参数（SenseVoice 或 Paraformer），并把下载链接写进配置里。  
+如果你说“都想试”，我也可以做成一键切换。
+
+回答：我选择sherpa-onnx-paraformer-trilingual-zh-cantonese-en
+AI回答：已切换为你选的 `sherpa-onnx-paraformer-trilingual-zh-cantonese-en`：
+
+- 改为 `--paraformer` 调用参数  
+- 下载配置键也改回 `paraformer`
+
+更新文件：
+- `app/launcher/config.json`
+- `app/launcher/main.py`
+
+下一步（宝宝版）：
+1) 下载模型包  
+`https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-paraformer-trilingual-zh-cantonese-en.tar.bz2`
+2) 解压后把 `model.onnx` 和 `tokens.txt` 放到 `app/models/`  
+3) 重新运行即可
+
+需要我把这个下载链接写进配置里的 `download_sources.github` 吗？
+
+人的回复：在你写之前我想问一下，写入有什么作用
+
+AI：“写入”指把下载链接预先填到 app/launcher/config.json 的
+  download_sources.github 里。作用是：
+
+  - 你点 GUI 里的“GitHub下载”按钮时，程序能自动下载模型和 VAD 文件
+  - 不用自己手动复制链接
+  - 但模型包仍需要你解压，把 model.onnx 和 tokens.txt 放进 app/models/
+
+  要不要我写入？如果要，我还会顺便把 silero_vad.onnx 的下载链接也写进去。
+
+人的回复：写入
+
+AI：已写入下载链接到 app/launcher/config.json。
+  现在点 GUI 里的“GitHub下载”就会拉取模型包和 silero_vad.onnx。
+
+  注意：模型包下载后仍需要你手动解压，把 model.onnx 和 tokens.txt 放到 app/    
+  models/。

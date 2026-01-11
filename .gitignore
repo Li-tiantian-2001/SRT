@@ -26,6 +26,3 @@ test/*.srt
 # OS
 .DS_Store
 Thumbs.db
-
-# 开发笔记（不公开）
-z-codex提示词和修改步骤/
