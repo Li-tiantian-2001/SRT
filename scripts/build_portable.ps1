@@ -11,7 +11,8 @@ $exePath = Join-Path $AppRoot $exeName
 
 Push-Location $launcher
 try {
-    pyinstaller --noconsole --onefile main.py --name "字幕生成工具"
+    # 使用 .spec 文件构建，确保包含所有隐藏依赖
+    pyinstaller "字幕生成工具.spec" --clean --noconfirm
 } finally {
     Pop-Location
 }
