@@ -12,7 +12,7 @@ app/models/*.onnx
 app/models/*.bin
 
 # 输出和缓存目录
-app/SRT_OUT/
+app/SRT_OUT/（已弃用）
 app/CACHE/
 app/logs/*.log
 
