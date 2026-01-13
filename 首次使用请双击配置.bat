@@ -37,14 +37,14 @@ if not exist "venv" (
 echo.
 
 :: 安装依赖
-echo [3/3] 安装依赖 (sherpa-onnx)...
+echo [3/3] 安装依赖 (requirements.txt)...
 echo      这可能需要几分钟，请耐心等待...
 echo.
-venv\Scripts\pip install sherpa-onnx -i https://pypi.tuna.tsinghua.edu.cn/simple
+venv\Scripts\pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 if errorlevel 1 (
     echo.
     echo [警告] 清华源安装失败，尝试官方源...
-    venv\Scripts\pip install sherpa-onnx
+    venv\Scripts\pip install -r requirements.txt
 )
 
 echo.

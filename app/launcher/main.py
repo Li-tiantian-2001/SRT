@@ -847,6 +847,15 @@ class SubtitleMakerApp(tk.Tk):
         model_dir = resolve_path(self.model_dir.get(), self.cfg.get("default_model_dir"))
         output_dir = resolve_path(self.output_dir.get(), self.cfg.get("default_output_dir"))
         os.makedirs(output_dir, exist_ok=True)
+        
+        # [修复] 尝试将路径转换为相对路径，以避免 sherpa-onnx 在中文绝对路径下加载失败
+        try:
+            cwd = os.getcwd()
+            model_dir = os.path.relpath(model_dir, cwd)
+            # 统一使用正斜杠，避免转义问题
+            model_dir = model_dir.replace(os.sep, "/")
+        except Exception:
+            pass
 
         base = os.path.splitext(os.path.basename(input_media))[0]
         output_srt = os.path.join(output_dir, base + ".srt")
